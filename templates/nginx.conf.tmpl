@@ -16,8 +16,11 @@ http {
 
     access_log  /var/log/nginx/access.log  main;
  
+    default_type application/dash+xml;
+
     server {
         listen      3000;
+        application/dash+xml
     
         # Serve live DASH fragments
         location /dash_live {
