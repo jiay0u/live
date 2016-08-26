@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7.2.1511
 MAINTAINER jiay0u <464118888@qq.com>
 
 RUN yum -y install wget pcre pcre-devel zlib zlib-devel gcc glibc glibc-devel make nasm pkgconfig lib-devel openssl-devel expat-devel gettext-devel libtool mhash.x86_64 perl-Digest-SHA1.x86_64 gcc-c++
