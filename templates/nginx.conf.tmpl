@@ -108,7 +108,7 @@ http {
 
         location /dash_live {
             # defines where the DASH files will retrieved on the server filesystem
-            alias /tmp/dashLive;
+            alias /datas/tmp/dashLive;
       
             # necessary if media files contain more than one DASH fragment
             if ($request_method = 'OPTIONS') {
@@ -181,14 +181,14 @@ rtmp {
         max_message 12M;
         buflen 2s;
 
-        application dash {
+        application pub_dash_${PUBLISH_SECRET} {
             live on;
             dash on;
             dash_playlist_length 60s;
             dash_fragment 2s;
       
             # defines where dash files will generated on the server filesystem
-            dash_path /tmp/dashLive;
+            dash_path /datas/tmp/dashLive;
         }
 
         application pub_${PUBLISH_SECRET} {
@@ -221,7 +221,7 @@ rtmp {
             deny publish all;
 
             hls on;
-            hls_path /tmp/hls;
+            hls_path /datas/tmp/hls;
             hls_fragment 15s;
             hls_nested on;
 
