@@ -22,7 +22,7 @@ http {
         # Serve live DASH fragments
         location /dash_live {
             # defines where the DASH files will retrieved on the server filesystem
-            alias /home/chenlin/www/dashLive;
+            alias /datas/tmp/dashLive;
       
             # necessary if media files contain more than one DASH fragment
             if ($request_method = 'OPTIONS') {
