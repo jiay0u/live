@@ -76,7 +76,7 @@ RUN cd /root \
 
 RUN ldconfig
 
-EXPOSE 80
+EXPOSE 3000
 EXPOSE 1935
 
 RUN mkdir -p /etc/nginx/templates
