@@ -16,8 +16,10 @@ RUN cd /root \
         --prefix=/etc/nginx \
         --add-module=../nginx-rtmp-module \
         --with-http_stub_status_module \
-    && make
+    && make \
     && make install
+
+RUN ldconfig
 
 EXPOSE 80
 EXPOSE 1935
